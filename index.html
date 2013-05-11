@@ -10,7 +10,22 @@
 	<H1> TEST SOME D3 PLZ! </H1>
 		<script type="text/javascript">
 		// Your beautiful D3 code goes here
-		d3.select("body").append("p").text("New paragraph!");
+		
+		// Let's give D3 a dataset
+		var dataset = [5, 10, 15, 20, 25];
+		
+		// Here's our old code, preserved just in case 
+		 // d3.select("body").append("p").text("New paragraph!");
+		 
+		 d3.select("body").selectAll("p")
+		 	.data(dataset)
+		 	.enter()
+		 	.append("p")
+		 	// that's boring. Let's do something new. 
+		 	//.text("New paragraph!");
+		 	
+		 	.text(function(d) {return d; });
+		 
 		</script>
 	</body>
 </html>			
