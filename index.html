@@ -23,7 +23,21 @@
 		<script type="text/javascript">
 
 		// Let's give D3 a dataset
-		var dataset = [5, 10, 15, 20, 25];
+		//var dataset = [5, 10, 15, 20, 25];
+		
+		// Let's generate a random dataset
+		// and have D3 visualize that
+		
+		// right now our dataset is an empty array variable
+		var dataset = []
+		
+		// loop 25 times
+		for (var i = 0; i < 25; i ++) {
+			// New random number between 1 and 30
+			var newNumber = Math.random() * 30;
+			// Add new number to array 
+			dataset.push(newNumber);
+			}
 		
 		d3.select("body").selectAll("div")
 			.data(dataset)
