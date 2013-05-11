@@ -4,28 +4,36 @@
 		<meta charset ="utf-8">
 		<title>D3 Test</title>
 		<script type="text/javascript" src="d3.v3.js"></script>
+		<style type ="text/css">
+			div.bar	{
+						display: inline-block;
+						width: 20px;
+						height: 75px;
+						background-color: teal;
+					}
+					
+					</style>	
+	
 	</head>
 	
 	<body>
-	<H1> TEST SOME D3 PLZ! </H1>
+	
+
 		<script type="text/javascript">
-		// Your beautiful D3 code goes here
-		
+
 		// Let's give D3 a dataset
 		var dataset = [5, 10, 15, 20, 25];
 		
-		// Here's our old code, preserved just in case 
-		 // d3.select("body").append("p").text("New paragraph!");
-		 
-		 d3.select("body").selectAll("p")
-		 	.data(dataset)
-		 	.enter()
-		 	.append("p")
-		 	// that's boring. Let's do something new. 
-		 	//.text("New paragraph!");
-		 	
-		 	.text(function(d) {return d; });
-		 
+		d3.select("body").selectAll("div")
+			.data(dataset)
+			.enter()
+			.append("div")
+			.attr("class", "bar")
+			.style("height", function(d) {
+				return d + "px";
+				});
+		
+
 		</script>
 	</body>
 </html>			
