@@ -30,7 +30,9 @@
 			.append("div")
 			.attr("class", "bar")
 			.style("height", function(d) {
-				return d + "px";
+				// The bars are too tiny when we just use one pixel
+				var barHeight = d * 5; 
+				return barHeight + "px";
 				});
 		
 
