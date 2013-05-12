@@ -76,6 +76,21 @@
 		
 		<circle  cx= "150" cy = "300"  r = "100" fill = "yellow" stroke ="orange" stroke-width="5" />
 		
+		<!-- Let's play around with transparency. 
+		In this case, we're specifying the coor with RGB,
+		just as with Processing.  The fourth value is 
+		alpha transparency between 0.0 (transparent) and 
+		1.0 (opaque/solid) -->
+		
+		<text x = "300" y = "300" font-family = "serif" 
+		font-size ="24" fill="gray">Pretty transparency</text>
+		
+		<circle cx="325" cy="325" r="20" fill="rgba(128, 0, 128, 1.0)"/>
+		<circle cx="350" cy="325" r="20" fill="rgba(0, 0, 255, 0.75)"/>
+		<circle cx="375" cy="325" r="20" fill="rgba(0, 255, 0, 0.5)"/>
+		<circle cx="400" cy="325" r="20" fill="rgba(255, 255, 0, 0.25)"/>
+		<circle cx="425" cy="325" r="20" fill="rgba(255, 0, 0, 0.1)"/>
+		
 		<!-- you have to close your svg element -->
 		
 		</svg>
