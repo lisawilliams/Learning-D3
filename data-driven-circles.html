@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset ="utf-8">
+		<title>D3 Test</title>
+		<script type="text/javascript" src="d3.v3.js"></script>
+	
+	
+	</head>
+	
+	<body>
+	
+	
+	<script type="text/javascript">
+	
+	// d3.select("body").append("svg");
+	
+	// width and height of our SVG canvas
+	var width = 500;
+	var height = 1000;
+	
+	// create a variable for our .SVG that D3 will draw and 
+	// manipulate
+	
+	var svg = d3.select("body")
+		.append("svg")
+		.attr("width", width)
+		.attr("height", height);
+		
+	// A dataset that we will use to draw SVG circles
+	// on our SVG canvas	
+	var dataset = [ 5, 10, 15, 20, 25 ];
+	
+	
+	// Tell D3 to select all the circles and the dataset
+	var circles = svg.selectAll("circle")
+					.data(dataset)
+					.enter()
+					.append("circle");
+	
+	// Let's let D3 what we want to do with our circles
+	// now that D3 has control of them. 
+	
+	// set the "CX" -- x axis position 
+	// each individual element in our dataset[] Array
+	// has a number 
+	// Our dataset has five values in it
+	// but computers start counting at zero
+	// so the first value in our dataset, "5"
+	// is also known as dataset[0], because it's in the 
+	// [0] position.  
+	// The second value in the dataset is dataset[1] and so on
+	// This code says, for each data element
+	// held by the default variable "d"
+	// find the dataset position -- [0], [1], [2], 
+	// whatever.  
+	// call that dataset position "i". 
+	// then multiply i by 50 and add 25. 
+	// then move on to the next value in the dataset. 
+	// so for dataset[0], this function returns: 
+	// "0 *50 + 25" or, 25. 
+	// for the next loop, it's 1*50+25, or 75.  
+	// so the first circle's x position is 25. 
+	// the second is 75, and so on.  
+	// honestly, I don't know why this can't be done 
+	// more simply.  
+	// some people have a fetish for creating code by 
+	// typing the fewest letters, even though it's hard 
+	// to understand that way. 
+					
+	circles.attr("cx", function(d, i) {
+		return (i * 50) + 25;
+		})
+		
+		// Let's set the Y axis position. 
+		// this one's a lot easier. 
+		// All the circles Y axis position is 
+		// 1/2 the "height" variable -- 
+		// which is the total height of the SVG
+		// canvas.  That means all the 
+		// circles are centered from top to bottom. 
+		.attr("cy" , height/2)
+		
+		// Let's set the radius of the circles
+		// Thus defining how big they are. 
+		// We use function(d) which holds all 
+		// the values in our dataset.
+		// This one loops through the dataset 
+		// and makes a circle for each value in the
+		// dataset -- and each new circle
+		// has a radius that's as long as that
+		// particular value in the dataset. 
+		.attr("r", function(d) {
+			return d;
+			});
+			
+							
+			
+		
+		
+	</script>	
+		
+		
+	
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	</body>
