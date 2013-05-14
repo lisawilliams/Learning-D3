@@ -23,21 +23,21 @@
 		<script type="text/javascript">
 
 		// Let's give D3 a dataset
-		//var dataset = [5, 10, 15, 20, 25];
+		var dataset = [37.1, 37.0, 36.4, 36.2, 35.8, 36.4];
 		
 		// Let's generate a random dataset
 		// and have D3 visualize that
 		
 		// right now our dataset is an empty array variable
-		var dataset = []
-		
-		// loop 25 times
-		for (var i = 0; i < 25; i ++) {
-			// New random number between 1 and 30
-			var newNumber = Math.random() * 30;
-			// Add new number to array 
-			dataset.push(newNumber);
-			}
+		// var dataset = []
+// 		
+// 		// loop 25 times
+// 		for (var i = 0; i < 25; i ++) {
+// 			// New random number between 1 and 30
+// 			var newNumber = Math.random() * 30;
+// 			// Add new number to array 
+// 			dataset.push(newNumber);
+// 			}
 		
 		d3.select("body").selectAll("div")
 			.data(dataset)
@@ -47,6 +47,43 @@
 			.style("height", function(d) {
 				// The bars are too tiny when we just use one pixel
 				var barHeight = d * 5; 
+				return barHeight + "px";
+				});
+		
+
+		</script>
+		
+			<script type="text/javascript">
+
+		// Let's give D3 a dataset
+		var dataset = [0, -.1, -.6, -.8, -1.2, -.6];
+		
+		// Let's generate a random dataset
+		// and have D3 visualize that
+		
+		// right now our dataset is an empty array variable
+		// var dataset = []
+// 		
+// 		// loop 25 times
+// 		for (var i = 0; i < 25; i ++) {
+// 			// New random number between 1 and 30
+// 			var newNumber = Math.random() * 30;
+// 			// Add new number to array 
+// 			dataset.push(newNumber);
+// 			}
+
+// Goddamnit, yanno -- some days you just need some 
+// motherfucking comments because that is ALL you HAVE to GIVE. 
+// I tell you, I have fucking had it with this day.  
+		
+		d3.select("body").selectAll("div")
+			.data(dataset)
+			.enter()
+			.append("div")
+			.attr("class", "bar")
+			.style("height", function(d) {
+				// The bars are too tiny when we just use one pixel
+				var barHeight = d * 25; 
 				return barHeight + "px";
 				});
 		
@@ -101,7 +138,7 @@
 			
 			
 			
-		
+	
 		
 		<!-- you have to close your svg element -->
 		
